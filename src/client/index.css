@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+
+html {
+    font-family: sans-serif
+}
+
+.title {
+    color: rgba(255,122,122,.8);
+    text-align: center;
+    font-family: 'Yellowtail', cursive;
+    font-size: xx-large;
+}
+
+.center {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateY(-40%);
+    transform: translateX(-50%)
+}
+
