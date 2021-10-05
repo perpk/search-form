@@ -19,3 +19,25 @@ html {
     transform: translateX(-50%)
 }
 
+.button {
+    position: absolute;
+    top: 100%;
+    left: 25%;
+    margin-top: 1rem;
+    height: 2rem;
+    background-color: rgba(255,122,122,.8);
+    border: none;
+    border-radius: 18px;
+    color:white;
+    text-size-adjust: 1rem;
+    font-size: large;
+    width: 12rem;
+    opacity: 0.6;
+    transition: 0.3s;
+    font-family: sans-serif;
+}
+
+.button:hover {
+    opacity: 1;
+    cursor: pointer;
+}

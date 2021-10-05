@@ -27,7 +27,8 @@ module.exports = {
   plugins: [
     // new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/client/index.html'
+      template: './src/client/index.html',
+      scriptLoading: "blocking"
     })
   ],
   devServer: {

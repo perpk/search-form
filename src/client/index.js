@@ -5,9 +5,7 @@ import './index.css';
 const autoCompleteJS = new autoComplete({
   placeHolder: 'namespace:artifact',
   data: {
-    //src: ['tofu', 'lentils', 'cabbage']
     src: async () => {
-      // const input = document.getElementById('autoComplete').value;
       try {
         const source = await fetch('/api/search', {
           method: 'POST',
@@ -19,7 +17,6 @@ const autoCompleteJS = new autoComplete({
           })
         });
         const data = await source.json();
-        console.log(data);
         return data;
       } catch (err) {
         console.log(err);
@@ -41,3 +38,27 @@ const autoCompleteJS = new autoComplete({
     highlight: true
   }
 });
+
+document
+  .querySelector('#autoComplete')
+  .addEventListener('selection', function (event) {
+    this.value = event.detail.selection.value;
+  });
+
+document
+  .querySelector('#getResults')
+  .addEventListener('click', async function (_) {
+    await getResults();
+  });
+
+const getResults = async () => {
+  await fetch('/api/info', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      value: document.getElementById('autoComplete').value
+    });
+  });
+}
